@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
+
 import './App.css';
+
+import LeftPanel from './Components/Content/LeftPanel/LeftPanel.jsx';
+import ContentWrapper from
+  './Components/Content/ContentWrapper/ContentWrapper.jsx';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/">
+          <LeftPanel/>
+          <ContentWrapper/>
+        </Route>
+        <Route exact path="/voting">
+
+        </Route>
+        <Route exact path="/breeds">
+
+        </Route>
+        <Route path="/gallery">
+
+        </Route>
+        <Route path="/search">
+
+        </Route>
+        <Route path="/favourites">
+
+        </Route>
+        <Route path="/likes">
+
+        </Route>
+        <Route path="/dislikes">
+
+        </Route>
+      </Switch>
     </div>
   );
 }
