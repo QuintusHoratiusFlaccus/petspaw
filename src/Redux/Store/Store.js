@@ -1,13 +1,15 @@
-import {combineReducers, applyMiddleware, createStore} from 'redux'
-// import {composeWithDevTools} from 'redux-devtools-extension';
-// import thunk from 'redux-thunk'
+import {combineReducers, createStore} from 'redux'
+import {composeWithDevTools} from 'redux-devtools-extension';
+
+import theme from './../Reducers/theme.js'
 
 const allReducers = combineReducers({
-
+  theme,
 })
 
 const store = createStore(
-  allReducers
+  allReducers,
+  composeWithDevTools()
 )
 
 export default store

@@ -1,7 +1,7 @@
 .header {
-  display: flex;
-  width: 100px;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 30px 70px 1fr;
+  width: 100%;
 }
 
 .header_title {

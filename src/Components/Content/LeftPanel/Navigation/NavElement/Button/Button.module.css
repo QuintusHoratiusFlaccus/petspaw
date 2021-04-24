@@ -1,0 +1,10 @@
+.button_text {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #FF868E;
+}

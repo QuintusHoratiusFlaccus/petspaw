@@ -1,0 +1,29 @@
+.active button {
+  background: #FF868E;
+}
+
+.active span {
+  color: #FFFFFF;
+}
+
+.active div {
+  border: 4px solid #FBE0DC;
+}
+
+.active {
+  pointer-events: none;
+}
+
+.nawLink {
+  cursor: pointer;
+}
+
+.nawLink:hover button {
+  background-color: rgba(251,224,220, 0.5);
+  transition: 0.2s linear;
+}
+
+.nawLink:hover div {
+  border: 4px solid rgb(255, 255, 255);
+  transition: 0.2s linear;
+}
