@@ -3,6 +3,7 @@ export const lightTheme = {
   color: '#000',
   componentsMain: '#FFFFFF',
   componentsSecond: '#F8F8F7',
+  mainPage: '#FBE0DC',
 }
 
 export const darkTheme = {
@@ -10,4 +11,5 @@ export const darkTheme = {
   color: '#FFFFFF',
   componentsMain: 'rgba(255, 255, 255, 0.05)',
   componentsSecond: 'rgba(255, 255, 255, 0.1)',
+  mainPage: 'rgba(255, 255, 255, 0.05)',
 }

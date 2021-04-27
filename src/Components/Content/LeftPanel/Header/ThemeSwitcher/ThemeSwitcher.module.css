@@ -15,8 +15,6 @@
 	visibility: hidden;
   cursor: pointer;
   padding: 0;
-  background: rgba(255, 134, 142, 0.2);
-  border-radius: 50px;
   border: none;
 }
 
@@ -34,7 +32,7 @@
   margin-right: 3px;
 }
 
-label {
+.switch > label {
   display: block;
   position: relative;
 	width: 44px;
@@ -44,7 +42,7 @@ label {
   border-radius: 50px;
 }
 
-label:after {
+.switch > label:after {
 	content: '';
 	position: absolute;
 	top: 4px;
@@ -66,7 +64,7 @@ label:after {
     rgba(255, 255, 255, 0.05);
 }
 
-input:checked + label:after {
+.switch input:checked + label:after {
 	left: calc(100% - 5px);
 	transform: translateX(-100%);
 }

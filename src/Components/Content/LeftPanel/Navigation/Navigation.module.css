@@ -3,6 +3,6 @@
   justify-content: space-between;
 }
 
-img {
+.wrapper img {
   pointer-events:none;
 }

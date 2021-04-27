@@ -6,8 +6,10 @@ import { ThemeProvider } from 'styled-components';
 
 import {StyledApp} from './StyledApp.js';
 import LeftPanel from './Components/Content/LeftPanel/LeftPanel.jsx';
-import ContentWrapper from
-  './Components/Content/ContentWrapper/ContentWrapper.jsx';
+import RightPanel from
+  './Components/Content/RightPanel/RightPanel.jsx';
+import {ReactComponent as GirlAndPetSVG} from
+  './Dist/Content/RightPanel/Home/girl-and-pet.svg';
 
 function App() {
   const selector = useSelector(state => state.theme);
@@ -18,11 +20,17 @@ function App() {
         <Switch>
           <Route exact path="/">
             <LeftPanel/>
-            <ContentWrapper/>
+            <RightPanel backgroundImg>
+              <div className="wrapperSvg">
+                <GirlAndPetSVG/>
+              </div>
+            </RightPanel>
           </Route>
           <Route exact path="/voting">
             <LeftPanel/>
-            <ContentWrapper/>
+            <RightPanel>
+              
+            </RightPanel>
           </Route>
           <Route exact path="/breeds">
 

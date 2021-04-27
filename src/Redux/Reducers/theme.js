@@ -1,5 +1,5 @@
 import { lightTheme, darkTheme } from
-  './../../Components/Content/LeftPanel/Header/theme.js';
+  './../../theme.js';
 
 function defaultTheme() {
   if (window.localStorage.getItem('theme') === 'light') {

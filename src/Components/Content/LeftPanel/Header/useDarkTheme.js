@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { theme } from './../../../../Redux/Actions/theme.js';
-import { lightTheme, darkTheme } from './theme.js';
+import { lightTheme, darkTheme } from './../../../../theme.js';
 
 export const useDarkTheme = () => {
   const dispatch = useDispatch();
