@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import s from './Button.module.css';
 
 const StyledButton = styled.button`
-  width: 138px;
+  width: 100%;
   height: 36px;
   background-color: ${({ theme }) => theme.componentsSecond};
   border: none;

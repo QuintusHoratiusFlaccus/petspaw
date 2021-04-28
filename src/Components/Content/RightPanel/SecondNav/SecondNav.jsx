@@ -1,20 +1,20 @@
-import s from './SortPanel.module.css';
+import s from './SecondNav.module.css';
 import SearchField from './SearchField/SearchField.jsx';
 import DefaultLink from './DefaultLink/DefaultLink.jsx';
 
 import SmileSVG
-  from './../../../../Dist/Content/RightPanel/SortPanel/smile.svg';
+  from './../../../../Dist/Content/RightPanel/SecondNav/smile.svg';
 import HeartSVG
-  from './../../../../Dist/Content/RightPanel/SortPanel/heart.svg';
+  from './../../../../Dist/Content/RightPanel/SecondNav/heart.svg';
 import GrimSVG
-  from './../../../../Dist/Content/RightPanel/SortPanel/grim.svg';
+  from './../../../../Dist/Content/RightPanel/SecondNav/grim.svg';
 
-const SortPanel = (props) => {
+const SecondNav = (props) => {
   return (
-      <div className={s.sortPanel}>
+      <div className={s.secondNav}>
         <SearchField/>
         <DefaultLink image={SmileSVG}>
-        
+
         </DefaultLink>
         <DefaultLink>
           <img src={HeartSVG} alt=""/>
@@ -26,4 +26,4 @@ const SortPanel = (props) => {
   )
 }
 
-export default SortPanel;
+export default SecondNav;

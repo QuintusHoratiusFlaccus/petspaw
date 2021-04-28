@@ -1,12 +1,13 @@
 import styled, {css} from 'styled-components';
 
 export const StyledWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
   position: relative;
-  min-width: 300px;
+  min-width: 560px;
   margin: 30px;
   border-radius: 20px;
-  overflow: visible;
-  ${props => props.backgroundImg && css`
+  ${props => props.home && css`
     background-color: ${({ theme }) => theme.mainPage};
     > div {
       position: absolute;
@@ -19,5 +20,5 @@ export const StyledWrapper = styled.section`
       height: 100%;
       width: 100%;
     }
-  `};
-`;
+  `}
+`
