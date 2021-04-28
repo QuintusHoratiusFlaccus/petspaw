@@ -14,13 +14,6 @@ export const StyledButton = styled.button`
   background-position: center center;
   background-repeat: no-repeat;
 
-  color: #FF868E;
-  font-family: Jost;
-  font-weight: 200;
-  font-size: 12px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 2px;
   :hover {
     color: #FFF;
     background-color: #FF868E;
@@ -40,6 +33,14 @@ export const StyledButton = styled.button`
     };
   `}
   ${props => props.withText && css`
-    background-position: center center;
+    color: #FF868E;
+    font-family: Jost;
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-left: 5%;
+    background-position: 20% center;
   `}
 `

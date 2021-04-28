@@ -1,15 +1,19 @@
-import { StyledWrapper } from './../StyledWrapper.js';
 import SecondNav from './../SecondNav/SecondNav.jsx';
 import ContentHead from './../ContentHead/ContentHead.jsx';
 
+import { GlobalWrapper } from './../Wrappers/GlobalWrapper.js';
+import { ContentWrapper } from './../Wrappers/ContentWrapper.js';
+
 const Voting = ({}) => {
   return (
-    <StyledWrapper>
+    <GlobalWrapper>
       <SecondNav/>
-      <ContentHead>
-        
-      </ContentHead>
-    </StyledWrapper>
+      <ContentWrapper>
+        <ContentHead>
+
+        </ContentHead>
+      </ContentWrapper>
+    </GlobalWrapper>
   )
 }
 

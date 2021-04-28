@@ -13,7 +13,7 @@ import AbtDownPinkSVG from
   './../../../../../Dist/Content/RightPanel/Breeds/ContentHeadAdd/abtDownPink.svg';
 import s from './SearchParams.module.css';
 
-const SearchParams = ({}) => {
+const SearchParams = () => {
   return (
     <div className={s.wrapper}>
       <ParamsSelect

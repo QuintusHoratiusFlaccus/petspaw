@@ -1,10 +1,10 @@
-import { StyledWrapper } from './../StyledWrapper.js';
+import { GlobalWrapper } from './../Wrappers/GlobalWrapper.js';
 
 const Home = ({home}) => {
   return (
-    <StyledWrapper home={home}>
+    <GlobalWrapper>
 
-    </StyledWrapper>
+    </GlobalWrapper>
   )
 }
 
