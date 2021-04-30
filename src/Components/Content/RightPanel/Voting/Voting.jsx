@@ -1,20 +1,32 @@
-import SecondNav from './../SecondNav/SecondNav.jsx';
+import { useDogState } from './Functions/useDogState.js';
+import { voteEvent } from './Functions/voteEvent.js';
+import { api } from './../../../../Services/Api.js';
+
 import ContentHead from './../ContentHead/ContentHead.jsx';
 import LawCourt from './LawCourt/LawCourt.jsx';
+import ActionLogs from './ActionLogs/ActionLogs.jsx';
 
-import { GlobalWrapper } from './../Wrappers/GlobalWrapper.js';
-import { ContentWrapper } from './../Wrappers/ContentWrapper.js';
+import Wrapper from './../Wrappers/Wrapper.jsx';
 
 const Voting = () => {
-  return (
-    <GlobalWrapper>
-      <SecondNav/>
-      <ContentWrapper>
-        <ContentHead/>
+  const [suspect, setSuspect, componentMounted] = useDogState({})
 
-        <LawCourt/>
-      </ContentWrapper>
-    </GlobalWrapper>
+  if (!componentMounted) {
+    return false
+  }
+
+  return (
+    <Wrapper>
+      <ContentHead/>
+
+      <LawCourt
+      image={suspect.url}
+      id={suspect.id}
+      voteEvent={voteEvent}
+      />
+
+      <ActionLogs></ActionLogs>
+    </Wrapper>
   )
 }
 

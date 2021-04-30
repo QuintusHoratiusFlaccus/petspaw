@@ -1,22 +1,20 @@
-import SecondNav from './../SecondNav/SecondNav.jsx';
 import UploadButton from './ContentHeadAdd/UploadButton.jsx';
 import ContentHead from './../ContentHead/ContentHead.jsx';
 import SearchParams from './SearchParams/SearchParams.jsx';
 
-import { ContentWrapper } from './../Wrappers/ContentWrapper.js';
-import { GlobalWrapper } from './../Wrappers/GlobalWrapper.js';
+import Wrapper from './../Wrappers/Wrapper.jsx';
+import { GaleryLayout } from './../Wrappers/galeryLayout.js';
 
 const Gallery = () => {
   return (
-    <GlobalWrapper>
-      <SecondNav/>
-      <ContentWrapper>
-        <ContentHead>
-          <UploadButton/>
-        </ContentHead>
-        <SearchParams/>
-      </ContentWrapper>
-    </GlobalWrapper>
+    <Wrapper>
+      <ContentHead>
+        <UploadButton/>
+      </ContentHead>
+      <SearchParams/>
+
+
+    </Wrapper>
   )
 }
 

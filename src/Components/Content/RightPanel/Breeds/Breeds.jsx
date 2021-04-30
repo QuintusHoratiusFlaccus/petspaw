@@ -1,20 +1,23 @@
-import SecondNav from './../SecondNav/SecondNav.jsx';
 import ContentHead from './../ContentHead/ContentHead.jsx';
 import SearchParams from './ContentHeadAdd/SearchParams.jsx';
 
-import { ContentWrapper } from './../Wrappers/ContentWrapper.js';
-import { GlobalWrapper } from './../Wrappers/GlobalWrapper.js';
+import Wrapper from './../Wrappers/Wrapper.jsx';
+import { GaleryLayout } from './../Wrappers/GaleryLayout.js';
 
 const Breeds = ({}) => {
   return (
-    <GlobalWrapper>
-      <SecondNav/>
-      <ContentWrapper>
-        <ContentHead>
-          <SearchParams/>
-        </ContentHead>
-      </ContentWrapper>
-    </GlobalWrapper>
+    <Wrapper>
+      <ContentHead>
+        <SearchParams/>
+      </ContentHead>
+      <GaleryLayout>
+        <div className="one"></div>
+      </GaleryLayout>
+      <GaleryLayout>
+        <div className="one"></div>
+      </GaleryLayout>
+
+    </Wrapper>
   )
 }
 

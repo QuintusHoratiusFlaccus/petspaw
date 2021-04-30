@@ -5,6 +5,8 @@ export const lightTheme = {
   componentsMain: '#FFFFFF',
   navButtons: '#FFFFFF',
 
+  votingActionLogs: '#F8F8F7',
+
   breedsSelectColor: '#F8F8F7',
 
   sortParamsBg: '#F8F8F7',
@@ -17,6 +19,8 @@ export const darkTheme = {
   mainPage: 'rgba(255, 255, 255, 0.05)',
   componentsMain: 'rgba(255, 255, 255, 0.05)',
   navButtons: 'rgba(255, 255, 255, 0.05)',
+
+  votingActionLogs: 'rgba(255, 255, 255, 0.05)',
 
   breedsSelectColor: 'rgba(255, 255, 255, 0.05)',
 

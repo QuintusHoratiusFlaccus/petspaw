@@ -20,10 +20,10 @@
 
 .nawLink:hover button {
   background-color: rgba(251,224,220, 0.5);
-  transition: 0.2s linear;
+  transition: 0.1s linear;
 }
 
 .nawLink:hover div {
   border: 4px solid rgb(255, 255, 255);
-  transition: 0.2s linear;
+  transition: 0.1s linear;
 }

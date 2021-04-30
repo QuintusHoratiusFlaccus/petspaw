@@ -14,10 +14,14 @@ import SmileWhiteSVG from
   './../../../../../../Dist/Content/RightPanel/Voting/Buttons/smileWhite.svg';
 import s from './ButtonsSet.module.css';
 
-const ButtonsSet = () => {
+const ButtonsSet = ({image_id, voteEvent}) => {
   return (
     <div className={s.buttons}>
       <ActionButton
+        voteEvent={voteEvent}
+        id="1"
+        image_id={image_id}
+
         bgColor="#97EAB9"
         borderRadius="20px 0 0 20px"
         bgImage={SmileWhiteSVG}
@@ -31,6 +35,10 @@ const ButtonsSet = () => {
         bgHoverColor="rgba(255, 134, 142, 0.3)"
       />
       <ActionButton
+        voteEvent={voteEvent}
+        id="0"
+        image_id={image_id}
+
         bgColor="#FFD280"
         borderRadius="0 20px 20px 0"
         bgImage={GrimWhiteSVG}

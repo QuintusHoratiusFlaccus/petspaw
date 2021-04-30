@@ -1,8 +1,11 @@
 import { StyledButton } from './StyledButton.js';
 
-const ActionButton = (props) => {
+const ActionButton = ({image_id, voteEvent, ...props}) => {
   return (
-    <StyledButton {...props}>
+    <StyledButton
+      onClick={(e) => {voteEvent(e.target.id, image_id)}}
+      {...props}
+    >
 
     </StyledButton>
   )
