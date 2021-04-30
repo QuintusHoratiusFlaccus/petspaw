@@ -6,5 +6,6 @@ export const ContentWrapper = styled.section`
   position: relative;
   flex-grow: 1;
   border-radius: 20px;
+  padding: 20px;
   background-color: ${({ theme }) => theme.componentsMain};
 `

@@ -1,17 +1,25 @@
 export const lightTheme = {
   body: '#F8F8F7',
-  color: '#000',
-  componentsMain: '#FFFFFF',
-  componentsSecond: '#F8F8F7',
+  text: '#000',
   mainPage: '#FBE0DC',
+  componentsMain: '#FFFFFF',
+  navButtons: '#FFFFFF',
+
+  breedsSelectColor: '#F8F8F7',
+
+  sortParamsBg: '#F8F8F7',
   selectColor: '#FFFFFF;',
 }
 
 export const darkTheme = {
   body: '#1D1D1D',
-  color: '#FFFFFF',
-  componentsMain: 'rgba(255, 255, 255, 0.05)',
-  componentsSecond: 'rgba(255, 255, 255, 0.1)',
+  text: '#FFFFFF',
   mainPage: 'rgba(255, 255, 255, 0.05)',
+  componentsMain: 'rgba(255, 255, 255, 0.05)',
+  navButtons: 'rgba(255, 255, 255, 0.05)',
+
+  breedsSelectColor: 'rgba(255, 255, 255, 0.05)',
+
+  sortParamsBg: 'rgba(255, 255, 255, 0.05)',
   selectColor: '#1D1D1D;',
 }

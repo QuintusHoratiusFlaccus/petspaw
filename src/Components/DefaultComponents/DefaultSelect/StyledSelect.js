@@ -16,7 +16,7 @@ export const StyledSelect = styled.select`
   color: #8C8C8C;
 
   ${props => props.breeds && css`
-    background-color: ${({ theme }) => theme.componentsSecond};
+    background-color: ${({ theme }) => theme.breedsSelectColor};
     min-width: 90px;
   `}
   ${props => props.gallery && css`

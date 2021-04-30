@@ -1,5 +1,6 @@
 import styled, {css} from 'styled-components';
 
+//non reusable styles
 export const StyledButton = styled.button`
   position: ${(props) => props.position || 'relative'};
   width: ${props => props.width || '40px'};
@@ -23,11 +24,16 @@ export const StyledButton = styled.button`
     right: 0;
     margin: 10px;
   `}
+  ${props => props.white && css`
+    background-color: ${({theme}) => theme.selectColor}};
+    margin: 0px 10px 0 0;
+
+  `}
   ${props => props.alphabet && css`
     border: 2px solid transparent;
-    background-color: ${({theme}) => theme.componentsSecond};
+    background-color: ${({theme}) => theme.breedsSelectColor};
     :hover {
-      background-color: ${({theme}) => theme.componentsSecond};
+      background-color: ${({theme}) => theme.breedsSelectColor};
       background-image: url(${(props) => props.bgImageHover});
       border: 2px solid #FBE0DC;
     };

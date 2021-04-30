@@ -1,0 +1,12 @@
+.lawCourt {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+}
+
+.lawCourt_image {
+  width: 100%;
+  height: 360px;
+  border: none;
+  border-radius: 20px;
+}

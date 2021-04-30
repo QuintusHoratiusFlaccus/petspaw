@@ -7,5 +7,5 @@ export const StyledApp = styled.div`
   height: 100vh;
   width: 100vw;
   background: ${({ theme }) => theme.body};
-  color: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.text};
 `;

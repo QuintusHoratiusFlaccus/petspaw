@@ -6,7 +6,7 @@ import SearchParams from './SearchParams/SearchParams.jsx';
 import { ContentWrapper } from './../Wrappers/ContentWrapper.js';
 import { GlobalWrapper } from './../Wrappers/GlobalWrapper.js';
 
-const Gallery = ({}) => {
+const Gallery = () => {
   return (
     <GlobalWrapper>
       <SecondNav/>

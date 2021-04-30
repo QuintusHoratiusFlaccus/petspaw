@@ -4,7 +4,7 @@ import s from './Button.module.css';
 const StyledButton = styled.button`
   width: 100%;
   height: 36px;
-  background-color: ${({ theme }) => theme.componentsSecond};
+  background-color: ${({ theme }) => theme.navButtons};
   border: none;
   border-radius: 10px;
   cursor: pointer;

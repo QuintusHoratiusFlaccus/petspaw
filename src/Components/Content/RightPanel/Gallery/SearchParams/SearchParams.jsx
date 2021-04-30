@@ -1,19 +1,45 @@
-import ParamsSelect from
-  './../../../../DefaultComponents/DefaultSelect/DefaultSelect.jsx';
 import ParamsButton from
   './../../../../DefaultComponents/DefaultButton/DefaultButton.jsx';
+  import ParamsSelect from './ParamsSpecifySelect/ParamsSelect.jsx';
 
-// import AbtUpGraySVG from
-//   './../../../../../Dist/Content/RightPanel/Breeds/ContentHeadAdd/abtUpGray.svg';
-// import AbtDownGraySVG from
-//   './../../../../../Dist/Content/RightPanel/Breeds/ContentHeadAdd/abtDownGray.svg';
-import s from './SearchParams.module.css';
+import ReloadPinkSVG from
+  './../../../../../Dist/Content/RightPanel/Gallery/reloadPink.svg';
+import ReloadWhiteSVG from
+  './../../../../../Dist/Content/RightPanel/Gallery/reloadWhite.svg';
+import { StyledWrapper } from './StyledWrapper.js';
 
-const SearchParams = ({}) => {
+const SearchParams = () => {
   return (
-    <div className={s.wrapper}>
-      
-    </div>
+    <StyledWrapper>
+      <div>
+        <ParamsSelect
+          gallery
+          title="ORDER"
+          width="50%"
+        />
+        <ParamsSelect
+          gallery
+          title="TYPE"
+          width="50%"
+        />
+      </div>
+      <div>
+        <ParamsSelect
+          gallery
+          title="BREED"
+          width="50%"
+        />
+        <ParamsSelect
+          gallery
+          title="LIMIT"
+        />
+        <ParamsButton
+          white
+          backgroundImage={ReloadPinkSVG}
+          bgImageHover={ReloadWhiteSVG}
+        />
+      </div>
+    </StyledWrapper>
   )
 }
 
