@@ -17,9 +17,8 @@ const Voting = () => {
     }
 
     return (
-        <Wrapper>
+        <>
             <ContentHead/>
-
             <LawCourt
                 image={suspect.url}
                 id={suspect.id}
@@ -27,7 +26,7 @@ const Voting = () => {
             />
 
             <ActionLogs></ActionLogs>
-        </Wrapper>
+        </>
     )
 }
 

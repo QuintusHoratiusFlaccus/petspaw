@@ -2,16 +2,10 @@ import { useSelector } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-
+import { BreedsWithPanel, GalleryWithPanel, VotingWithPanel } from './Components/Content/RightPanel/main'
 import LeftPanel from './Components/Content/LeftPanel/LeftPanel.jsx'
 import Home from
     './Components/Content/RightPanel/Home/Home.jsx'
-import Voting from
-    './Components/Content/RightPanel/Voting/Voting.jsx'
-import Breeds from
-    './Components/Content/RightPanel/Breeds/Breeds.jsx'
-import Gallery from
-    './Components/Content/RightPanel/Gallery/Gallery.jsx'
 import Selected from
     './Components/Content/RightPanel/Selected/Selected.jsx'
 import { ReactComponent as GirlAndPetSVG } from
@@ -25,25 +19,21 @@ function App() {
     return (
         <ThemeProvider theme={selector}>
             <StyledApp>
+                <LeftPanel/>
                 <Switch>
                     <Route exact path="/">
-                        <LeftPanel/>
                         <Home home/>
                     </Route>
                     <Route exact path="/voting">
-                        <LeftPanel/>
-                        <Voting/>
+                        <VotingWithPanel/>
                     </Route>
                     <Route exact path="/breeds">
-                        <LeftPanel/>
-                        <Breeds/>
+                        <BreedsWithPanel/>
                     </Route>
                     <Route path="/gallery">
-                        <LeftPanel/>
-                        <Gallery/>
+                        <GalleryWithPanel/>
                     </Route>
                     <Route path="/breeds/selected">
-                        <LeftPanel/>
                         <Selected/>
                     </Route>
                     <Route path="/search">

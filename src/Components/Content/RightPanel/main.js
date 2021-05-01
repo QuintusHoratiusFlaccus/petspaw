@@ -1,9 +1,14 @@
-import { withRightPanelWrapper } from '../../HOC/main'
-import Breeds from './Breeds/Breeds.jsx'
+import { withContentHead, withRightPanelWrapper } from '../../HOC/main'
+import Breeds from './Breeds/Breeds'
+import Gallery from './Gallery/Gallery'
+import Voting from './Voting/Voting'
 
-const BeerdWithPanel = withRightPanelWrapper(Breeds)
+const BreedsWithPanel = withRightPanelWrapper(Breeds)
+const GalleryWithPanel = withRightPanelWrapper(Gallery)
+const VotingWithPanel = withRightPanelWrapper(Voting)
 
 export {
-    BeerdWithPanel,
-
+    BreedsWithPanel,
+    GalleryWithPanel,
+    VotingWithPanel
 }

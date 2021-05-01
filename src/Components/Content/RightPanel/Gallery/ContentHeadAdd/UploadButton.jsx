@@ -19,4 +19,4 @@ const ContentHeadAdd = () => {
     )
 }
 
-export default withContentHead(ContentHeadAdd)
+export default withContentHead(ContentHeadAdd)(false)
