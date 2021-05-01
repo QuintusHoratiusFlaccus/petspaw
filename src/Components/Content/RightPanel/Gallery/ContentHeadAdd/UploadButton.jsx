@@ -5,13 +5,14 @@ import UploadPinkSVG from
 import UploadButton from
   './../../../../DefaultComponents/DefaultButton/DefaultButton.jsx';
 
-const ContentHeadAdd = () => {
+const ContentHeadAdd = ({openModal}) => {
   return (
     <UploadButton
       width="140px"
       withText
       backgroundImage={UploadPinkSVG}
       bgImageHover={UploadWhiteSVG}
+      onClick={openModal}
     >
       UPLOAD
     </UploadButton>
