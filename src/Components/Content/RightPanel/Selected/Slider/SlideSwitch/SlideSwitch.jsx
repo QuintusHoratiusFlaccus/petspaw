@@ -2,7 +2,7 @@ import { StyledContainer } from './StyledContainer.js';
 
 const ButtonsSet = () => {
 
-
+  
 
   return (
     <StyledContainer>

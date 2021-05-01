@@ -1,12 +1,29 @@
-import SlideSwitch from './SlideSwitch/SlideSwitch.jsx';
-
-import s from './Description.module.css';
+import { StyledWrapper } from './StyledWrapper.js';
 
 const Description = () => {
   return (
-    <div className={s.description}>
-      <span>Family companion dog</span>
-    </div>
+    <StyledWrapper>
+      <span className="description_name">
+        Basenji
+      </span>
+      <span className="description_characteristic">Family companion dog</span>
+      <div className="description_temperament">
+        <span>Temperament:</span>
+        <span className="description_data">sadjoashfoiahfa</span>
+      </div>
+      <div className="description_height">
+        <span>Height:</span>
+        <span className="description_data">aaaaaaaaaaa</span>
+      </div>
+      <div className="description_weight">
+        <span>Weight:</span>
+        <span className="description_data"></span>
+      </div>
+      <div className="description_lifeSpan">
+        <span>Life span:</span>
+        <span className="description_data"></span>
+      </div>
+    </StyledWrapper>
   )
 }
 

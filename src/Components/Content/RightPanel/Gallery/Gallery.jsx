@@ -3,7 +3,7 @@ import ContentHead from './../ContentHead/ContentHead.jsx';
 import SearchParams from './SearchParams/SearchParams.jsx';
 
 import Wrapper from './../Wrappers/Wrapper.jsx';
-import { GaleryLayout } from './../Wrappers/galeryLayout.js';
+import { GaleryLayout } from './../Wrappers/GaleryLayout.js';
 
 const Gallery = () => {
   return (
