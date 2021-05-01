@@ -14,7 +14,7 @@ export const StyledButton = styled.button`
   background-image: url(${(props) => props.backgroundImage});
   background-position: center center;
   background-repeat: no-repeat;
-
+  transition: 0.1s;
   :hover {
     color: #FFF;
     background-color: #FF868E;
