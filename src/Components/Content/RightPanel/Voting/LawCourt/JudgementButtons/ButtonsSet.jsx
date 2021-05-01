@@ -12,11 +12,11 @@ import SmileGreenSVG from
   './../../../../../../Dist/Content/RightPanel/Voting/Buttons/smileGreen.svg';
 import SmileWhiteSVG from
   './../../../../../../Dist/Content/RightPanel/Voting/Buttons/smileWhite.svg';
-import s from './ButtonsSet.module.css';
+import { StyledContainer } from './StyledContainer.js';
 
 const ButtonsSet = ({image_id, voteEvent}) => {
   return (
-    <div className={s.buttons}>
+    <StyledContainer>
       <ActionButton
         voteEvent={voteEvent}
         id="1"
@@ -45,7 +45,7 @@ const ButtonsSet = ({image_id, voteEvent}) => {
         bgHoverImage={GrimYellowSVG}
         bgHoverColor="rgba(255, 210, 128, 0.3)"
       />
-    </div>
+    </StyledContainer>
   )
 }
 

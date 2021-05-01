@@ -11,6 +11,8 @@ import Breeds from
   './Components/Content/RightPanel/Breeds/Breeds.jsx';
 import Gallery from
   './Components/Content/RightPanel/Gallery/Gallery.jsx';
+import Selected from
+  './Components/Content/RightPanel/Selected/Selected.jsx';
 import {ReactComponent as GirlAndPetSVG} from
   './Dist/Content/RightPanel/Home/girl-and-pet.svg';
 
@@ -38,6 +40,10 @@ function App() {
           <Route path="/gallery">
             <LeftPanel/>
             <Gallery/>
+          </Route>
+          <Route path="/breeds/selected">
+            <LeftPanel/>
+            <Selected/>
           </Route>
           <Route path="/search">
 

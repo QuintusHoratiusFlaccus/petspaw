@@ -4,9 +4,9 @@
 import { StyledWrapper } from './StyledWrapper.js';
 import URLIndication from './URLIndication/URLIndication.jsx';
 
-const ContentHead = ({children}) => {
+const ContentHead = ({left, children}) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper left={left}>
       <URLIndication/>
       {children}
     </StyledWrapper>

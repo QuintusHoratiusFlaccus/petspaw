@@ -13,7 +13,9 @@ const Breeds = ({}) => {
       <GaleryLayout>
         <div className="one"></div>
       </GaleryLayout>
-      <GaleryLayout>
+      <GaleryLayout
+      
+      >
         <div className="one"></div>
       </GaleryLayout>
 
