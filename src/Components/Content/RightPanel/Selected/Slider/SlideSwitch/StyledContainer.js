@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
   position: absolute;
-  left: calc(50% - 45px);
+  display: flex;
   width: 90px;
   height: 30px;
+  left: 50%;
   bottom: 0;
-  display: flex;
+  transform: translate(-50%);
   justify-content: space-between;
   border-radius: 21px;
   border: 4px solid transparent;

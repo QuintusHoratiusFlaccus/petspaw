@@ -22,7 +22,7 @@ export const darkTheme = {
   navButtons: 'rgba(255, 255, 255, 0.05)',
 
   votingActionLogs: 'rgba(255, 255, 255, 0.05)',
-  votingButtonsBg: '#282828',
+  votingButtonsBg: '#292929',
 
   breedsSelectColor: 'rgba(255, 255, 255, 0.05)',
 
