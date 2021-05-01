@@ -1,22 +1,22 @@
 import UploadWhiteSVG from
-  './../../../../../Dist/Content/RightPanel/Gallery/ContentHeadAdd/uploadWhite.svg';
+    './../../../../../Dist/Content/RightPanel/Gallery/ContentHeadAdd/uploadWhite.svg'
 import UploadPinkSVG from
-  './../../../../../Dist/Content/RightPanel/Gallery/ContentHeadAdd/uploadPink.svg';
+    './../../../../../Dist/Content/RightPanel/Gallery/ContentHeadAdd/uploadPink.svg'
 import UploadButton from
-  './../../../../DefaultComponents/DefaultButton/DefaultButton.jsx';
+    './../../../../DefaultComponents/DefaultButton/DefaultButton.jsx'
+import { withContentHead } from '../../../../HOC/main'
 
-const ContentHeadAdd = ({openModal}) => {
-  return (
-    <UploadButton
-      width="140px"
-      withText
-      backgroundImage={UploadPinkSVG}
-      bgImageHover={UploadWhiteSVG}
-      onClick={openModal}
-    >
+const ContentHeadAdd = () => {
+    return (
+        <UploadButton
+            width="140px"
+            withText
+            backgroundImage={UploadPinkSVG}
+            bgImageHover={UploadWhiteSVG}
+        >
       UPLOAD
-    </UploadButton>
-  )
+        </UploadButton>
+    )
 }
 
-export default ContentHeadAdd;
+export default withContentHead(ContentHeadAdd)

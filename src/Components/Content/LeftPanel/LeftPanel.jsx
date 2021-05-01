@@ -1,25 +1,26 @@
 // import { useState } from 'react'
 // import { useHistory } from 'react-router-dom'
 // import { useDispatch } from 'react-redux'
-import s from './LeftPanel.module.css';
+import s from './LeftPanel.module.css'
 
-import Header from './Header/Header.jsx';
-import Navigation from './Navigation/Navigation.jsx';
+import Header from './Header/Header.jsx'
+import Navigation from './Navigation/Navigation.jsx'
+
 
 const LeftPanel = () => {
-  return (
-    <div className={s.wrapper}>
-      <section className={s.wrapper_fixed}>
-        <Header/>
-        <div className={s.appeal}>
-          <span className={s.appeal_first}>Hi intern!</span>
-          <span className={s.appeal_second}>Welcome to MSI 2021 Front-end test</span>
-          <span className={s.appeal_third}>Lets start using The Dogs API</span>
+    return (
+        <div className={s.wrapper}>
+            <section className={s.wrapper_fixed}>
+                <Header/>
+                <div className={s.appeal}>
+                    <span className={s.appeal_first}>Hi intern!</span>
+                    <span className={s.appeal_second}>Welcome to MSI 2021 Front-end test</span>
+                    <span className={s.appeal_third}>Lets start using The Dogs API</span>
+                </div>
+                <Navigation/>
+            </section>
         </div>
-        <Navigation/>
-      </section>
-    </div>
-  )
+    )
 }
 
-export default LeftPanel;
+export default LeftPanel
