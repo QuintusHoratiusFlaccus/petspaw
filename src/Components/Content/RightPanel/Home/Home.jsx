@@ -1,11 +1,11 @@
-import { GlobalWrapper } from './../Wrappers/GlobalWrapper.js';
+import { GlobalWrapper } from './../Wrappers/GlobalWrapper.js'
 
-const Home = ({home}) => {
-  return (
-    <GlobalWrapper>
-
-    </GlobalWrapper>
-  )
+const Home = ({ home }) => {
+    return (
+        <GlobalWrapper>
+ 
+        </GlobalWrapper>
+    )
 }
 
-export default Home;
+export default Home
