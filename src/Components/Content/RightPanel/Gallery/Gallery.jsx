@@ -1,14 +1,22 @@
 import UploadButton from './ContentHeadAdd/UploadButton.jsx'
 import SearchParams from './SearchParams/SearchParams.jsx'
 
-import Wrapper from './../Wrappers/Wrapper.jsx'
-import ContentHead from '../ContentHead/ContentHead'
+import { useDispatch } from 'react-redux'
+import { modalAction } from '../../../../Redux/Actions/modalAction'
 
 
 const Gallery = () => {
+    const dispatch = useDispatch()
+
+    const openModal = () => {
+        dispatch(modalAction(true))
+    }
+
     return (
         <>
-            <UploadButton/>
+            <UploadButton
+                onClick={openModal}
+            />
             <SearchParams/>
         </>
     )

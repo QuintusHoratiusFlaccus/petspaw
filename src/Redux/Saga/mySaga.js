@@ -1,9 +1,9 @@
-import { W } from '../Constants/constants.js'
 import { takeLatest } from 'redux-saga/effects'
-import addNewCity from './Sagas/addNewCity.js'
+import { FETCH_FAVOURITES } from '../Constants/Sagas/Constants'
+import addFavourites from './Sagas/addFavourites'
 
 function* mySaga(){
-  yield takeLatest(WIDGET_WEATHER_ADD, addNewCity)
+    yield takeLatest(FETCH_FAVOURITES, addFavourites)
 }
 
 export default mySaga

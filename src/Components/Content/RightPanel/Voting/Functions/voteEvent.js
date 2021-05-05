@@ -1,16 +1,13 @@
-import { useEffect, useState } from 'react';
-import { api } from './../../../../../Services/Api.js';
+import { useEffect, useState } from 'react'
+import { api } from './../../../../../Services/Api.js'
 
-export const voteEvent = (value, image_id) => {
-  const reqBody = {value, image_id}
+export const voteEvent = (image_id) => async (e) => {
+    const value = e.target.id
+    const reqBody = { image_id, value }
 
-  const voteThisDog = async () => {
     try {
-      await api.votes.postVote(reqBody)
+        await api.votes.postVote(reqBody)
     } catch (e) {
-      console.log('Error' + e)
+        console.log('Error' + e)
     }
-  }
-
-  voteThisDog()
-};
+}

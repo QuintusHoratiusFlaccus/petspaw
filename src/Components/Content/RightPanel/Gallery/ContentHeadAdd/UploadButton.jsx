@@ -6,13 +6,14 @@ import UploadButton from
     './../../../../DefaultComponents/DefaultButton/DefaultButton.jsx'
 import { withContentHead } from '../../../../HOC/main'
 
-const ContentHeadAdd = () => {
+const ContentHeadAdd = ({ onClick }) => {
     return (
         <UploadButton
             width="140px"
             withText
             backgroundImage={UploadPinkSVG}
             bgImageHover={UploadWhiteSVG}
+            onClick={onClick}
         >
       UPLOAD
         </UploadButton>

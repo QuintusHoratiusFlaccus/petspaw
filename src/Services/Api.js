@@ -1,23 +1,44 @@
 import axios from 'axios'
 
-const apiKey = '1071ec0e-65e6-406c-97b2-38e2be50a18b'
-const subId = { sub_id: 'userzero' }
+export const apiKey = '7f78abb3-3eb0-442e-aa89-9858175d4695'
+const sub_id = 'userzero'
 
 export const api = {
-    search: {
+    votes: {
+        postVote: data => axios.post(
+            'https://api.thedogapi.com/v1/votes',
+            { ...data, sub_id }
+        )
+    },
+    images: {
+        postImage: data => axios.post(
+            'https://api.thecatapi.com/v1/images/upload',
+            data,
+            {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                }
+            }
+        ),
         getRandomDog: () => axios.get(
             'https://api.thedogapi.com/v1/images/search',
         )
     },
-    votes: {
-        postVote: data => axios.post(
-            'https://api.thedogapi.com/v1/votes',
-            { ...subId, ...data }
+    favourites: {
+        postAsAFavourite: data => axios.post(
+            'https://api.thedogapi.com/v1/favourites',
+            { ...data, sub_id },
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            }
+        ),
+        getSpecificFavourive: data => axios.get(
+            `https://api.thedogapi.com/v1/favourites/${data.id}`,
+        ),
+        deleteFavourite: data => axios.delete(
+            `https://api.thedogapi.com/v1/favourites/${data.id}`,
         )
-    }
+    },
 }
-//
-// export const api = {
-//     search: () =>  new Promise(resolve => resolve),
-//     votes: () =>  new Promise(resolve => resolve)
-// }
