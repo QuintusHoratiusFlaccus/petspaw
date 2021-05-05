@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components'
 
 export const StyledButton = styled.button`
   height: 80px;
@@ -15,4 +15,11 @@ export const StyledButton = styled.button`
     background-color: ${props => props.bgHoverColor || '#FFF'};
     background-image: url(${props => props.bgHoverImage});
   }
+  ${props => props.isFav === true && css`
+    background-image: url(${props => props.selected});
+    :hover {
+      background-color: ${props => props.bgColor || '#FFF'};
+      background-image: url(${props => props.selected});
+    }
+  `}
 `

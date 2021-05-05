@@ -5,16 +5,19 @@ import GrimWhiteSVG from
 import GrimYellowSVG from
     './../../../../../../Dist/Content/RightPanel/Voting/Buttons/grimYellow.svg'
 import HearthRedSVG from
-    './../../../../../../Dist/Content/RightPanel/Voting/Buttons/hearthRed.svg'
+    '../../../../../../Dist/Content/RightPanel/Voting/Buttons/heartRed.svg'
 import HearthWhiteSVG from
-    './../../../../../../Dist/Content/RightPanel/Voting/Buttons/hearthWhite.svg'
+    '../../../../../../Dist/Content/RightPanel/Voting/Buttons/heartWhite.svg'
+import HeartWhiteFilledSVG from
+    './../../../../../../Dist/Content/RightPanel/Voting/Buttons/heartWhiteFilled.svg'
 import SmileGreenSVG from
     './../../../../../../Dist/Content/RightPanel/Voting/Buttons/smileGreen.svg'
 import SmileWhiteSVG from
     './../../../../../../Dist/Content/RightPanel/Voting/Buttons/smileWhite.svg'
+
 import { StyledContainer } from './StyledContainer.js'
 
-const ButtonsSet = ({ image_id, voteEvent }) => {
+const ButtonsSet = ({ image_id, voteEvent, favClick, isFav }) => {
     return (
         <StyledContainer>
             <ActionButton
@@ -29,11 +32,17 @@ const ButtonsSet = ({ image_id, voteEvent }) => {
                 bgHoverColor="rgba(151, 234, 185, 0.3)"
             />
             <ActionButton
+                onClick={() => {
+                    favClick(isFav)
+                }}
+                isFav={isFav}
+
                 bgColor="#FF868E"
                 bgImage={HearthWhiteSVG}
                 bgHoverImage={HearthRedSVG}
                 bgHoverColor="rgba(255, 134, 142, 0.3)"
-            /> 
+                selected={HeartWhiteFilledSVG}
+            />
             <ActionButton
                 onClick={voteEvent}
                 id="0"

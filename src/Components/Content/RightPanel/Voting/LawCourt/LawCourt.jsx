@@ -1,7 +1,7 @@
 import ButtonsSet from './JudgementButtons/ButtonsSet.jsx'
 import s from './LawCourt.module.css'
 
-const LawCourt = ({voteEvent, image, id, ...props}) => {
+const LawCourt = ({ voteEvent, image, id, isFav, favClick }) => {
     return (
         <div className={s.lawCourt}>
             <img
@@ -12,6 +12,8 @@ const LawCourt = ({voteEvent, image, id, ...props}) => {
             <ButtonsSet
                 voteEvent={voteEvent}
                 image_id={id}
+                isFav={isFav}
+                favClick={favClick}
             />
         </div>
     )

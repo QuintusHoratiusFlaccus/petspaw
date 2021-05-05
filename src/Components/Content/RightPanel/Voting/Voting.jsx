@@ -1,4 +1,5 @@
-import React, { useEffect, useLayoutEffect } from 'react'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import { useDogState } from './Functions/useDogState.js'
 import { voteEvent } from './Functions/voteEvent.js'
 import { api } from './../../../../Services/Api.js'
@@ -6,16 +7,12 @@ import ContentHead from './../ContentHead/ContentHead.jsx'
 import LawCourt from './LawCourt/LawCourt.jsx'
 import ActionLogs from './ActionLogs/ActionLogs.jsx'
 
-import Wrapper from './../Wrappers/Wrapper.jsx'
-import { useFavouriteState } from './Functions/useFavouriteState'
-import { useDispatch } from 'react-redux'
-import { getAllFavourites } from '../../../../Redux/Actions/getAllFavourites'
-
-
 const Voting = () => {
     const dispatch = useDispatch()
-    const [suspect, getRandomDog, componentMounted] = useDogState()
-    const [isFav, setFav, setId] = useFavouriteState()
+
+    const [suspect, getRandomDog,
+        isFav, favClick,
+        componentMounted] = useDogState()
 
     const withGetRandomDog = (fn) => (e) => {
         fn(e)
@@ -26,17 +23,14 @@ const Voting = () => {
         return <></>
     }
 
-    useEffect(() => {
-        dispatch(getAllFavourites())
-
-    }, [])
-
     return (
         <>
             <ContentHead/>
             <LawCourt
                 image={suspect?.url}
-                voteEvent={withGetRandomDog(voteEvent(suspect?.id))}
+                voteEvent={withGetRandomDog(voteEvent(suspect?.id, dispatch))}
+                isFav={isFav}
+                favClick={favClick}
             />
 
             <ActionLogs></ActionLogs>
