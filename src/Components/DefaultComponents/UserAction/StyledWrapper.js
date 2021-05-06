@@ -1,10 +1,12 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledWrapper = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
   height: 60px;
+  min-height: 60px;
   margin-top: 10px;
   background-color: ${({ theme }) => theme.votingActionLogs};
   border-radius: 10px;
@@ -15,7 +17,8 @@ export const StyledWrapper = styled.div`
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
-  .time {
+  
+  .action_time {
     width: 61px;
     height: 30px;
     background: #FFFFFF;
@@ -25,11 +28,18 @@ export const StyledWrapper = styled.div`
     margin-right: 20px;
   }
 
-  .quote {
+  .action_quote {
     color: #8C8C8C;
   }
 
-  .image_id {
+  .action_image_id {
     margin: 0 4px;
+  }
+  
+  .action_svg {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 20px;
   }
 `

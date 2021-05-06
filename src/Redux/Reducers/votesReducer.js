@@ -13,6 +13,7 @@ const createAction = (data) => {
         time: getDate(),
         imgId: data.id,
         event: data.action,
+        timeStamp: Date.now()
     }
 }
 

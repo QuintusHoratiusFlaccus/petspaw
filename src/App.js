@@ -8,8 +8,6 @@ import LeftPanel from './Components/Content/LeftPanel/LeftPanel.jsx'
 import Home from './Components/Content/RightPanel/Home/Home.jsx'
 import Selected from './Components/Content/RightPanel/Selected/Selected.jsx'
 import Modal from './Components/Content/RightPanel/Modal/Modal'
-import { ReactComponent as GirlAndPetSVG } from
-    './Dist/Content/RightPanel/Home/girl-and-pet.svg'
 
 import { StyledApp } from './StyledApp.js'
 import { apiKey } from './Services/Api'

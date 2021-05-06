@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 export const useDogState = () => {
     const dispatch = useDispatch()
-    // const selector = useSelector((state) => state.favouritesData.favouritesList)
+    const selector = useSelector((state) => state.favouritesData.favouritesList)
     const [suspect, setSuspect] = useState()
     const [isFav, setFav] = useState(false)
     const [favId, setFavId] = useState()
@@ -38,15 +38,14 @@ export const useDogState = () => {
             if (favourite) {
                 await api.favourites.deleteFavourite({ id: favId })
                 setFav(false)
-                dispatchVote('FAV_DELETE')
+                dispatchVote('DELETE_FAV')
                 return
             }
             if (!favourite) {
                 const resp = await api.favourites.postAsAFavourite({ image_id: suspect.id })
                 setFav(true)
-                console.log(favId)
                 setFavId(resp.data.id)
-                dispatchVote('FAV_ADD')
+                dispatchVote('ADD_FAV')
                 return
             }
         } catch (error) {
@@ -54,7 +53,6 @@ export const useDogState = () => {
         }
     }
 
-    //Controversial decision
     // useEffect(() => {
     //     if (selector.length) {
     //         const localFav = selector?.find((el) => {

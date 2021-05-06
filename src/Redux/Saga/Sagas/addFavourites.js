@@ -4,12 +4,9 @@ import { fetchFavourites } from '../../Constants/Sagas/Constants'
 
 function* addFavourites () {
     try {
-        console.log('stage1')
         yield put({ type: fetchFavourites.REQUEST })
-        console.log('stage2')
         const resp = yield call(api.favourites.getFavourites)
-        console.log('stage3')
-        yield put({ type: fetchFavourites.SUCCESS, payload: resp })
+        yield put({ type: fetchFavourites.SUCCESS, payload: resp.data })
     } catch (error) {
         yield put({ type: fetchFavourites.ERROR, payload: error })
     } finally {
