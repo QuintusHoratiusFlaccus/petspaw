@@ -1,24 +1,25 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components'
 
-export const GaleryLayout = styled.div`
+export const GalleryLayout = styled.div`
   display: grid;
   width: 100%;
-  height: 500px;
+  height: 470px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, minmax(25%, 1fr));
   grid-template-areas:
-  'one two three'
-  'one four four'
-  'five four four';
+    'one three two'
+    'four four two'
+    'four four five';
+  
   grid-gap: 15px;
   border-radius: 20px;
-  padding: 20px;
+  padding: 0 0 20px 0;
 
   ${props => props.reversed && css`
     grid-template-areas:
-    'one two three'
-    'five five three'
-    'five five four';
+    'two one three'
+    'two five five'
+    'four five five';
   `}
 
   .one {
@@ -40,5 +41,4 @@ export const GaleryLayout = styled.div`
   .five {
     grid-area: five;
   }
-
 `

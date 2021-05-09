@@ -13,27 +13,59 @@ import AbtDownPinkSVG from
     './../../../../../Dist/Content/RightPanel/Breeds/ContentHeadAdd/abtDownPink.svg'
 import s from './SearchParams.module.css'
 
-const SearchParams = () => {
+const SearchParams = ({ selectBreeds, queryParams, orderChange, handleChange }) => {
     return (
         <div className={s.wrapper}>
             <ParamsSelect
                 breeds
                 placeholder="All breeds"
-            />
+                id="breed"
+                value={queryParams.breed}
+                onChange={handleChange}
+                base={selectBreeds}
+            >
+                <option
+                    value="0"
+                    id="0item"
+                >
+                    All breeds
+                </option>
+            </ParamsSelect>
             <ParamsSelect
                 width="25%"
                 breeds
-                placeholder="Limit: 1&"
-            />
+                id="limit"
+                value={queryParams.limit}
+                onChange={handleChange}
+            >
+                <option value="5">
+                    5
+                </option>
+                <option value="10">
+                    10
+                </option>
+                <option value="15">
+                    15
+                </option>
+                <option value="20">
+                    20
+                </option>
+            </ParamsSelect>
             <ParamsButton
                 alphabet
                 backgroundImage={AbtUpGraySVG}
                 bgImageHover={AbtUpPinkSVG}
+                id="order"
+                value="ASC"
+                onClick={orderChange}
             />
             <ParamsButton
                 alphabet
                 backgroundImage={AbtDownGraySVG}
                 bgImageHover={AbtDownPinkSVG}
+                id="order"
+                value="DESC"
+                onClick={orderChange}
             />
         </div>
     )

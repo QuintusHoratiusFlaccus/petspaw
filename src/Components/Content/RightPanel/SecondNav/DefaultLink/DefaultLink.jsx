@@ -1,18 +1,18 @@
-import {NavLink} from 'react-router-dom';
-import {StyledWrapper} from './StyledWrapper.js';
-import s from './DefaultLink.module.css';
+import { NavLink } from 'react-router-dom'
+import { StyledWrapper } from './StyledWrapper.js'
 
-const DefaultLink = ({image, path, children, ...props}) => {
-  return (
-      <StyledWrapper image={image}>
-        <NavLink
-          activeClassName={s.active}
-          to={`/${path}`}
+const DefaultLink = ({ image, path, activeImage }) => {
+    return (
+        <StyledWrapper
+            image={image}
+            activeImage={activeImage}
         >
-          {children}
-        </NavLink>
-      </StyledWrapper>
-  )
+            <NavLink 
+                activeClassName="active"
+                to={`/${path}`}
+            />
+        </StyledWrapper>
+    )
 }
 
-export default DefaultLink;
+export default DefaultLink

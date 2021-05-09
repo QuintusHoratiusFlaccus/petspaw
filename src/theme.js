@@ -18,7 +18,7 @@ export const lightTheme = {
     breedsSelectColor: '#F8F8F7',
 
     sortParamsBg: '#F8F8F7',
-    selectColor: '#FFFFFF;',
+    cardBg: '#FFFFFF',
 }
 
 export const darkTheme = {
@@ -38,5 +38,6 @@ export const darkTheme = {
     breedsSelectColor: 'rgba(255, 255, 255, 0.05)',
 
     sortParamsBg: 'rgba(255, 255, 255, 0.05)',
-    selectColor: '#1D1D1D;',
+    selectColor: '#1D1D1D',
+    cardBg: '#282828',
 }

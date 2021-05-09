@@ -3,7 +3,7 @@ export const createReducer = (reducerMap, initialState = null) => (state = initi
 
     const reducer = reducerMap[action.type]
     if(reducer){
-        stateUpdate = reducer(state, action.payload, action)
+        stateUpdate = reducer(state, action)
     }
 
     return stateUpdate === state ? state : stateUpdate

@@ -3,14 +3,15 @@ import DefaultSelect from
 
 import { StyledWrapper } from './StyledWrapper.js'
 
-const ParamsSelect = ({ width, title, ...props }) => {
+const ParamsSelect = ({ children, width, title, ...props }) => {
     return (
         <StyledWrapper width={width}>
             <span>{title}</span>
             <DefaultSelect
                 {...props}
-                placeholder="Random&"
-            />
+            >
+                {children}
+            </DefaultSelect>
         </StyledWrapper>
     )
 }

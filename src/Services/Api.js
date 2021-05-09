@@ -10,6 +10,14 @@ export const api = {
         postVote: data => axios.post(
             'https://api.thedogapi.com/v1/votes',
             { ...data, sub_id }
+        ),
+        getVotes: data => axios.get(
+            'https://api.thedogapi.com/v1/votes',
+            {
+                params: {
+                    sub_id
+                }
+            }
         )
     },
     images: {
@@ -24,6 +32,14 @@ export const api = {
         ),
         getRandomDog: () => axios.get(
             'https://api.thedogapi.com/v1/images/search',
+        ),
+        getDogsByParams: data => axios.get(
+            'https://api.thedogapi.com/v1/images/search',
+            {
+                params: {
+                    ...data
+                }
+            }
         )
     },
     favourites: {
@@ -51,4 +67,22 @@ export const api = {
             `https://api.thedogapi.com/v1/favourites/${data.id}`,
         )
     },
+    breeds: {
+        getBreeds: data => axios.get(
+            'https://api.thedogapi.com/v1/breeds',
+            {
+                params: {
+                    ...data
+                }
+            }
+        ),
+        getCurrentBreed: data => axios.get(
+            'https://api.thedogapi.com/v1/breeds/search',
+            {
+                params: {
+                    ...data
+                }
+            }
+        ),
+    }
 }

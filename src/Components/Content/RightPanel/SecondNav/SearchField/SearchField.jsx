@@ -7,21 +7,24 @@ import LoupeWhiteSVG from
     './../../../../../Dist/Content/RightPanel/SecondNav/loupeWhite.svg'
 import s from './SearchField.module.css'
 
-const SearchField = (props) => {
+const SearchField = ({ value, onSubmit , onChange }) => {
     return (
-        <div className={s.search__wrapper}>
+        <form onSubmit={onSubmit} className={s.search__wrapper}>
             <StyledInput
                 type="text"
                 placeholder="Search for breeds by name"
+                value={value}
+                onChange={onChange}
             />
-          
+
             <SearchButton
                 backgroundImage={LoupeSVG}
                 bgImageHover={LoupeWhiteSVG}
                 position="absolute"
                 search
+                type="submit"
             />
-        </div>
+        </form>
     )
 }
 

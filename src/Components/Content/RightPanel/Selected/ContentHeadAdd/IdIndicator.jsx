@@ -1,11 +1,12 @@
-import s from './IdIndicator.module.css';
+import s from './IdIndicator.module.css'
+import { withContentHead } from '../../../../HOC/main'
 
-const IdIndicator = () => {
-  return (
-    <span className={s.dogId}>
-      28
-    </span>
-  )
+const IdIndicator = ({ id }) => {
+    return (
+        <span className={s.dogId}>
+            {id}
+        </span>
+    ) 
 }
 
-export default IdIndicator;
+export default withContentHead(IdIndicator)(true)

@@ -12,7 +12,7 @@ const reducerFunctions = {
 
         return newState
     },
-    favouriteSuccess: (state, { payload }) => {
+    favouriteSuccess: (state, payload) => {
         const newState = {
             ...state,
             isLoading: false,
@@ -38,13 +38,36 @@ const reducerFunctions = {
 
         return newState
     },
+    favouriteAdd: (state, payload) => {
+        const newState = {
+            ...state,
+            favouritesList: [
+                ...state.favouritesList,
+                payload
+            ]
+        }
+
+        return newState
+    },
+    favouriteDelete: (state, payload) => {
+        const newState = {
+            ...state,
+            favouritesList: state.favouritesList.filter(
+                (item) => item.image_id !== payload.image_id
+            )
+        }
+
+        return newState
+    },
 }
 
 const reducerMap = {
     [fetchFavourites.REQUEST]: (state) => reducerFunctions.favouriteRequest(state),
-    [fetchFavourites.SUCCESS]: (state, { payload }) => reducerFunctions.favouriteRequest(state, { payload }),
-    [fetchFavourites.ERROR]: (state) => reducerFunctions.favouriteRequest(state),
-    [fetchFavourites.FULFILL]: (state, { error }) => reducerFunctions.favouriteRequest(state, { error }),
+    [fetchFavourites.SUCCESS]: (state, action ) => reducerFunctions.favouriteSuccess(state, action.payload ),
+    [fetchFavourites.ERROR]: (state) => reducerFunctions.favouriteError(state),
+    [fetchFavourites.FULFILL]: (state, error ) => reducerFunctions.favouriteFulfill(state, error ),
+    [fetchFavourites.ADD]: (state, action) => reducerFunctions.favouriteAdd(state, action.payload),
+    [fetchFavourites.DELETE]: (state, action) => reducerFunctions.favouriteDelete(state, action.payload),
 }
 
 export const favouritesData = createReducer(reducerMap, initialState)

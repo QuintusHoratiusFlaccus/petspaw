@@ -3,7 +3,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import axios from 'axios'
-import { BreedsWithPanel, GalleryWithPanel, VotingWithPanel } from './Components/Content/RightPanel/main'
+import {
+    BreedsWithPanel,
+    GalleryWithPanel,
+    VotingWithPanel,
+    FavouritesWithPanel,
+    SelectedWithPanel,
+    SearchWithPanel,
+    LikesWithPanel,
+} from './Components/Content/RightPanel/main'
 import LeftPanel from './Components/Content/LeftPanel/LeftPanel.jsx'
 import Home from './Components/Content/RightPanel/Home/Home.jsx'
 import Selected from './Components/Content/RightPanel/Selected/Selected.jsx'
@@ -42,16 +50,16 @@ function App() {
                         <GalleryWithPanel/>
                     </Route>
                     <Route path="/breeds/selected">
-                        <Selected/>
+                        <SelectedWithPanel/>
                     </Route>
                     <Route path="/search">
-
+                        <SearchWithPanel/>
                     </Route>
                     <Route path="/favourites">
-
+                        <FavouritesWithPanel/>
                     </Route>
                     <Route path="/likes">
-
+                        <LikesWithPanel/>
                     </Route>
                     <Route path="/dislikes">
 

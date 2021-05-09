@@ -1,8 +1,9 @@
 import { StyledButton } from './StyledButton.js'
 
-const DefaultButton = ({ children, ...props }) => {
+const DefaultButton = ({ children, onClick, ...props }) => {
     return <StyledButton
         {...props}
+        onClick={onClick}
     >
         {children}
     </StyledButton>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledWrapper = styled.div`
   display: grid;
@@ -21,14 +21,15 @@ export const StyledWrapper = styled.div`
 
   .description_name {
     position: absolute;
+    min-width: max-content;
     height: 55px;
     transform: translate(-50%);
     left: 50%;
     top: -31px;
-    padding: 0 30px;
+    padding: 0 20px;
     font-size: 36px;
     line-height: 55px;
-    background: ${({ theme }) => theme.votingButtonsBg};
+    background-color: ${({ theme }) => theme.votingButtonsBg};
     border-radius: 20px;
     text-align: center;
   }

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledWrapper = styled.div`
   width: 60px;
@@ -18,7 +18,12 @@ export const StyledWrapper = styled.div`
     background-position: center center;
     transition: 0.2s;
     :hover:not(.active) {
-      background: #FBE0DC;
+      background-color: #FBE0DC;
     }
+  }
+  
+  .active {
+    background-image: url(${(props) => props.activeImage});
+    background-color: #FF868E;
   }
 `
