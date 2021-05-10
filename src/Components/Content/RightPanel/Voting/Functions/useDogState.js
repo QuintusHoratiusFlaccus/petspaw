@@ -11,8 +11,6 @@ export const useDogState = () => {
     const [isFav, setFav] = useState(false)
     const [favId, setFavId] = useState()
 
-    const [componentMounted, setComponentMounted] = useState(false)
-
     const getRandomDog = async () => {
         try {
             const res = await api.images.getRandomDog()
@@ -21,11 +19,6 @@ export const useDogState = () => {
             console.log('Error' + e)
         }
     } 
-
-    useEffect(() => {
-        getRandomDog()
-        setComponentMounted(true)
-    }, [])
 
     //Like/dislike needed in nice interfaces. used twice #mustpdate
     const _dispatchCompose= (action) => {
@@ -46,13 +39,13 @@ export const useDogState = () => {
         })
     }
 
-    const _loveDoggy = async () => {
+    const _unloveDoggy = async () => {
         await api.favourites.deleteFavourite({ id: favId })
         setFav(false)
         _dispatchCompose('DELETE_FAV')
     }
 
-    const _unloveDoggy = async () => {
+    const _loveDoggy = async () => {
         const resp = await api.favourites.postAsAFavourite({ image_id: suspect.id })
         setFav(true)
         setFavId(resp.data.id)
@@ -61,7 +54,7 @@ export const useDogState = () => {
 
     const favClick = (favourite) => {
         try {
-            favourite ? _loveDoggy() : _unloveDoggy()
+            favourite ? _unloveDoggy() : _loveDoggy()
         } catch (error) {
             console.log(error)
         }
@@ -84,6 +77,5 @@ export const useDogState = () => {
     }, [suspect])
 
     return [suspect, getRandomDog,
-        isFav, favClick,
-        componentMounted]
+        isFav, favClick]
 }

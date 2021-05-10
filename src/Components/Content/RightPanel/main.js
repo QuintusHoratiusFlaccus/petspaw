@@ -5,7 +5,7 @@ import Voting from './Voting/Voting'
 import Favourites from './Favourites/Favourites'
 import Selected from './Selected/Selected'
 import Search from './Search/Search'
-import Likes from './Likes/Likes'
+import Vote from './Vote/Vote'
 
 const BreedsWithPanel = withRightPanelWrapper(Breeds)
 const GalleryWithPanel = withRightPanelWrapper(Gallery)
@@ -13,7 +13,7 @@ const VotingWithPanel = withRightPanelWrapper(Voting)
 const FavouritesWithPanel = withRightPanelWrapper(Favourites)
 const SelectedWithPanel = withRightPanelWrapper(Selected)
 const SearchWithPanel = withRightPanelWrapper(Search)
-const LikesWithPanel = withRightPanelWrapper(Likes)
+const VoteWithPanel = withRightPanelWrapper(Vote)
 
 export {
     BreedsWithPanel,
@@ -22,5 +22,5 @@ export {
     FavouritesWithPanel,
     SelectedWithPanel,
     SearchWithPanel,
-    LikesWithPanel,
+    VoteWithPanel,
 }

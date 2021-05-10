@@ -1,56 +1,63 @@
 import { StyledCard } from './StyledCard.js'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { voteActions } from '../../../../../Redux/Actions/voteActions'
 import { fetchFavourites } from '../../../../../Redux/Constants/Sagas/Constants'
 import { api } from '../../../../../Services/Api'
+import { useState } from 'react'
 
 const HeartCard = (props) => {
-    const selector = useSelector(state => state.favouritesData.favouritesList.find((el) => el.image.id === props.id))
+    const dispatch = useDispatch()
+    const selector = useSelector(state => state.favouritesData.favouritesList.find(el => el.image_id == props.image_id))
+    const [respId, setRespId] = useState(null)
 
     const _dispatchCompose= (action) => {
         //this dispatch needed on 2 pages, no more #mustupdate
         dispatch(voteActions({
-            id: selector.id,
+            id: props.image_id,
             action: action
         }))
+
         const keyWord = action.split('_')[0]
         dispatch({
             type: fetchFavourites[keyWord],
             payload: {
-                image_id: suspect.id,
+                //hah[hpahphpahpahphep, memes. need more sweet dreams #mustupdate?
+                image_id: props.image_id,//<---
                 image: {
-                    id: suspect.id,
-                    url: suspect.url
+                    id: props.image_id,//<---
+                    url: props.url
                 }
             }
         })
     }
 
-    const _loveDoggy = async () => {
-        await api.favourites.deleteFavourite({ id: favId })
-        setFav(false)
+    const _unloveDoggy = async () => {
+        await api.favourites.deleteFavourite({ id: respId || selector.id })
+        setRespId(null)
         _dispatchCompose('DELETE_FAV')
     }
 
-    const _unloveDoggy = async () => {
-        const resp = await api.favourites.postAsAFavourite({ image_id: suspect.id })
-        setFavId(resp.data.id)
+    const _loveDoggy = async () => {
+        const resp = await api.favourites.postAsAFavourite({ image_id: props.image_id })
+        setRespId(resp.data.id)
         _dispatchCompose('ADD_FAV')
     }
 
     const favClick = (favourite) => {
         try {
-            favourite ? _loveDoggy() : _unloveDoggy()
+            favourite ? _unloveDoggy() : _loveDoggy()
         } catch (error) {
             console.log(error)
         }
     }
 
-    console.log(selector)
     return (
         <StyledCard
             {...props}
-            heartState={selector}
+            heartState={!!selector}
+            onClick={() => {
+                favClick(!!selector)
+            }}
         >
             <div className="hoverContent_action"/>
         </StyledCard>

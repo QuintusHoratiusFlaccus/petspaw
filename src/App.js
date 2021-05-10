@@ -10,7 +10,7 @@ import {
     FavouritesWithPanel,
     SelectedWithPanel,
     SearchWithPanel,
-    LikesWithPanel,
+    VoteWithPanel,
 } from './Components/Content/RightPanel/main'
 import LeftPanel from './Components/Content/LeftPanel/LeftPanel.jsx'
 import Home from './Components/Content/RightPanel/Home/Home.jsx'
@@ -38,7 +38,7 @@ function App() {
 
                 <Switch>
                     <Route exact path="/">
-                        <Home home/>
+                        <Home/>
                     </Route>
                     <Route exact path="/voting">
                         <VotingWithPanel/>
@@ -46,23 +46,27 @@ function App() {
                     <Route exact path="/breeds">
                         <BreedsWithPanel/>
                     </Route>
-                    <Route path="/gallery">
+                    <Route exact path="/gallery">
                         <GalleryWithPanel/>
                     </Route>
-                    <Route path="/breeds/selected">
+                    <Route exact path="/breeds/selected">
                         <SelectedWithPanel/>
                     </Route>
-                    <Route path="/search">
+                    <Route exact path="/search">
                         <SearchWithPanel/>
                     </Route>
-                    <Route path="/favourites">
+                    <Route exact path="/favourites">
                         <FavouritesWithPanel/>
                     </Route>
-                    <Route path="/likes">
-                        <LikesWithPanel/>
+                    <Route exact path="/likes">
+                        <VoteWithPanel
+                            type="like"
+                        />
                     </Route>
-                    <Route path="/dislikes">
-
+                    <Route exact path="/dislikes">
+                        <VoteWithPanel
+                            type="dislike"
+                        />
                     </Route>
                 </Switch>
             </StyledApp>

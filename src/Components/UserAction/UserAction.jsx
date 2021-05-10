@@ -1,7 +1,7 @@
 import { StyledWrapper } from './StyledWrapper.js'
-import FavSVG from '../../../Dist/Content/RightPanel/Voting/Buttons/heartRed.svg'
-import LikeSVG from '../../../Dist/Content/RightPanel/Voting/Buttons/smileGreen.svg'
-import DislikeSVG from '../../../Dist/Content/RightPanel/Voting/Buttons/grimYellow.svg'
+import FavSVG from '../../Dist/Content/RightPanel/Voting/Buttons/heartRed.svg'
+import LikeSVG from '../../Dist/Content/RightPanel/Voting/Buttons/smileGreen.svg'
+import DislikeSVG from '../../Dist/Content/RightPanel/Voting/Buttons/grimYellow.svg'
 
 
 const UserAction = (props) => {

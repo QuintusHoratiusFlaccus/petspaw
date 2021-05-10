@@ -5,11 +5,17 @@ const DefaultCard = ({ ComponentAction, ...props }) => {
         <StyledCard
             {...props}
         >
-            <ComponentAction
-                value={props.value}
-                id={props.id}
-                text={props.text}
-            />
+            {
+                ComponentAction ?
+                    <ComponentAction
+                        id={props.value}
+                        image_id={props.id}
+                        url={props.bgImage}
+                        text={props.text}
+                    />
+                    : null
+
+            }
         </StyledCard>
     )
 }

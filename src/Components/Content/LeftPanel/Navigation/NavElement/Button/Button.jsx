@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import s from './Button.module.css';
+import styled from 'styled-components'
+import s from './Button.module.css'
 
 const StyledButton = styled.button`
   width: 100%;
@@ -8,16 +8,16 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 10px;
   cursor: pointer;
-`;
+`
 
-const Button = ({text, ...props}) => {
-  return (
-    <StyledButton>
-      <span className={s.button_text}>
-        {text}
-      </span>
-    </StyledButton>
-  )
+const Button = ({ text, ...props }) => {
+    return (
+        <StyledButton>
+            <span className={s.button_text}>
+                {text}
+            </span>
+        </StyledButton>
+    )
 }
 
-export default Button;
+export default Button

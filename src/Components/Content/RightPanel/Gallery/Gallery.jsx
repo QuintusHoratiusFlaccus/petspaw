@@ -1,6 +1,5 @@
 import UploadButton from './ContentHeadAdd/UploadButton.jsx'
 import SearchParams from './SearchParams/SearchParams.jsx'
-
 import { useDispatch } from 'react-redux'
 import { modalAction } from '../../../../Redux/Actions/modalAction'
 import { useEffect, useState } from 'react'
@@ -8,8 +7,9 @@ import { api } from '../../../../Services/Api'
 import { createStructuredArr } from '../../../../Functions/Content/RightPanel/createStructuredArr'
 import { createGalleryList } from '../../../../Functions/Content/RightPanel/createGallaryList'
 import HeartCard from '../CardTypes/WithHeart/HeartCard'
+import withPreloader from '../../../HOC/withPreloader'
 
-const Gallery = () => {
+const Gallery = ({ setLoading }) => {
     const dispatch = useDispatch()
     const [queryParams, setQueryParams] = useState({
         breed: 0,
@@ -41,6 +41,7 @@ const Gallery = () => {
             const resp = await api.breeds.getBreeds()
             setBreedsData(resp.data.slice(0, (queryParams.limit)))
             setState(resp.data)
+            setLoading(false)
         }
 
         apiReq(arrFilter)
@@ -90,4 +91,4 @@ const Gallery = () => {
     )
 }
 
-export default Gallery
+export default withPreloader(Gallery)

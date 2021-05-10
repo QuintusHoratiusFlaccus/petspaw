@@ -2,7 +2,6 @@ import React from 'react'
 import { StyledWrapper as DescriptionWrapper } from './StyledWrapper'
 
 const Description = (props) => {
-    console.log(props)
     return (
         <DescriptionWrapper>
             <span className="description_name">

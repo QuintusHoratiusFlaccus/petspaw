@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import FilledHeartSVG from '../../../../../Dist/Content/RightPanel/Voting/Buttons/redHeart.svg'
-import HeartSVG from '../../../../../Dist/Content/RightPanel/Voting/Buttons/heartRed.svg'
+import HeartSVG from '../../../../../Dist/Content/RightPanel/Voting/Buttons/littleheart.svg'
 
 export const StyledCard = styled.div`
   position: absolute;

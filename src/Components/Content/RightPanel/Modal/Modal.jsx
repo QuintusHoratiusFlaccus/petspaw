@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyledModalWrapper } from './StyledModalWrapper'
 import ModalTitle from './Title/ModalTitle'
 import CloseButton from '../../../DefaultComponents/DefaultButton/DefaultButton'
-
 import ClosePink from '../../../../Dist/Content/RightPanel/Modal/CloseButton/closePink.svg'
 import CloseWhite from '../../../../Dist/Content/RightPanel/Modal/CloseButton/closeWhite.svg'
 import DragNDrop from './DragNDrop/DragNDrop'
@@ -14,7 +13,7 @@ import { modalAction } from '../../../../Redux/Actions/modalAction'
 
 const Modal = () => {
     const dispatch = useDispatch()
-    const selector = useSelector((state) => state.modalState)
+    const selector = useSelector((state) => state.modalReducer)
     const [loadedImg, setLoadedImg] = useState({
         imgFile: null,
         imgName: null,
@@ -68,7 +67,7 @@ const Modal = () => {
             if(loadedImg) {
                 const resp = await api.images.postImage(formData)
                 console.log(resp.status)
-                if (resp.status === 200) setResStatus('success')
+                if (resp.data.approved === 1) setResStatus('success')
             }
         } catch(error) {
             if (error.response.status === 400) setResStatus('error')

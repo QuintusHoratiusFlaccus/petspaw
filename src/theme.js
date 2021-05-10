@@ -11,14 +11,13 @@ export const lightTheme = {
     modalCloseBtn: '#FFFFFF',
     modalBgImage: imgUploadBg,
     modalAlert: '#FFFFFF',
-
     votingActionLogs: '#F8F8F7',
     votingButtonsBg: '#FFFFFF',
-
     breedsSelectColor: '#F8F8F7',
-
     sortParamsBg: '#F8F8F7',
+    selectColor: '#FFFFFF',
     cardBg: '#FFFFFF',
+    preloaderBg: '#FFFFFF',
 }
 
 export const darkTheme = {
@@ -31,13 +30,11 @@ export const darkTheme = {
     modalCloseBtn: 'rgba(255, 255, 255, 0.05)',
     modalBgImage: imgUploadBgGray,
     modalAlert: 'rgba(255, 255, 255, 0.05)',
-
     votingActionLogs: 'rgba(255, 255, 255, 0.05)',
     votingButtonsBg: '#292929',
-
-    breedsSelectColor: 'rgba(255, 255, 255, 0.05)',
-
+    breedsSelectColor: '#333333',
     sortParamsBg: 'rgba(255, 255, 255, 0.05)',
     selectColor: '#1D1D1D',
     cardBg: '#282828',
+    preloaderBg: '#292929',
 }

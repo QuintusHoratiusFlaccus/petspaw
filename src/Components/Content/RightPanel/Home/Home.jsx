@@ -1,10 +1,13 @@
-import { GlobalWrapper } from './../Wrappers/GlobalWrapper.js'
+import { HomeWrapper } from './HomeWrapper'
+import { ReactComponent as GirlAndPetSVG } from './../../../../Dist/Content/RightPanel/Home/girl-and-pet.svg'
 
-const Home = ({ home }) => {
+const Home = () => {
     return (
-        <GlobalWrapper>
- 
-        </GlobalWrapper>
+        <HomeWrapper>
+            <div>
+                <div/>
+            </div>
+        </HomeWrapper>
     )
 }
 

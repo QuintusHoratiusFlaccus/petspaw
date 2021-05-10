@@ -5,9 +5,10 @@ export const StyledContainer = styled.div`
   left: 50%;
   width: 90px;
   height: 30px;
-  bottom: 0;
+  bottom: -17px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-radius: 21px;
   border: 4px solid transparent;
   transform: translate(-50%);
@@ -15,7 +16,8 @@ export const StyledContainer = styled.div`
   padding: 0 8px;
   
   .container {
-    display: block;
+    width: 10px;
+    height: 10px;
     position: relative;
     cursor: pointer;
   }

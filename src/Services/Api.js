@@ -22,7 +22,7 @@ export const api = {
     },
     images: {
         postImage: data => axios.post(
-            'https://api.thecatapi.com/v1/images/upload',
+            'https://api.thedogapi.com/v1/images/upload',
             data,
             {
                 headers: {

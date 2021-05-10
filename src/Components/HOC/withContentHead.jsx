@@ -2,7 +2,6 @@ import URLIndication from '../Content/RightPanel/ContentHead/URLIndication/URLIn
 import { StyledWrapper } from '../Content/RightPanel/ContentHead/StyledWrapper'
 import React from 'react'
 
-
 const withContentHead = Component => left => props => {
     return (
         <StyledWrapper left={left}>

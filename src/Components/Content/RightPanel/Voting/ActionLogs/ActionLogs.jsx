@@ -1,4 +1,4 @@
-import UserAction from '../../../../DefaultComponents/UserAction/UserAction.jsx'
+import UserAction from '../../../../UserAction/UserAction.jsx'
 
 import s from './ActionLogs.module.css'
 import { useEffect, useState } from 'react'

@@ -1,5 +1,6 @@
 import DefaultCard from '../../../Components/DefaultComponents/DefaultCard/DefaultCard'
 import { GalleryLayout } from '../../../Components/Content/RightPanel/Wrappers/GalleryLayout'
+import ClearnessIndicator from '../../../Components/ClearnessIndicator/ClearnessIndicator'
 
 const stingifiedNumbers = ['one', 'two', 'three', 'four', 'five']
 
@@ -9,6 +10,7 @@ export const createGalleryList = (dogsArr, ComponentAction) => {
 
     const galleryLayout = (index) => (
         <GalleryLayout
+            key={`${index}_gallery_key`}
             reversed={((index+1)/5)%2}
         >
             {galleryLayoutPhotos}
@@ -41,6 +43,10 @@ export const createGalleryList = (dogsArr, ComponentAction) => {
         exactList.push(
             galleryLayout(dogsArr.length)
         )
+    }
+
+    if(!dogsArr.length) {
+        return <ClearnessIndicator/>
     }
 
     return exactList

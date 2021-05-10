@@ -4,8 +4,10 @@ import { useLocation } from 'react-router-dom'
 import { api } from '../../../../Services/Api'
 import Description from './Description/Description'
 import Slider from './Slider/Slider'
+import withPreloader from '../../../HOC/withPreloader'
 
-const Selected = () => {
+const Selected = (props) => {
+    const { setLoading } = props
     const id = useLocation().search.split('=')[1]
     const [dog, setDog] = useState({
         name: '',
@@ -24,7 +26,6 @@ const Selected = () => {
 
         const apiReq = async () => {
             const resp= await api.images.getDogsByParams(data)
-            console.log(resp.data)
             setDog(resp.data[0].breeds[0])
             setImagesArr(resp.data.map((el) => {
                 return {
@@ -32,6 +33,7 @@ const Selected = () => {
                     url: el.url,
                 }
             }))
+            setLoading(false)
         }
 
         apiReq()
@@ -52,4 +54,4 @@ const Selected = () => {
     )
 }
 
-export default Selected
+export default withPreloader(Selected)

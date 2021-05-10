@@ -13,4 +13,10 @@ export const StyledWrapper = styled.form`
     align-items: flex-end;
     width: 100%;
   }
+  
+  .form_part {
+    display: flex;
+    align-items: flex-end;
+    width: 50%;
+  }
 `

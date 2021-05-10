@@ -1,15 +1,23 @@
 import ParamsButton from
     './../../../../DefaultComponents/DefaultButton/DefaultButton.jsx'
 import ParamsSelect from './ParamsSpecifySelect/ParamsSelect.jsx'
-
 import ReloadPinkSVG from
     './../../../../../Dist/Content/RightPanel/Gallery/reloadPink.svg'
 import ReloadWhiteSVG from
     './../../../../../Dist/Content/RightPanel/Gallery/reloadWhite.svg'
 import { StyledWrapper } from './StyledWrapper.js'
+import DefaultSelectOption from '../../../../DefaultComponents/DefaultSelect/DefaultSelectOption'
 
 const SearchParams = ({ handleSubmit, handleChange, selectBreeds, queryParams }) => {
 
+    const breedsNames = selectBreeds.map((el) => (
+        <DefaultSelectOption
+            key={`${el.id}_key`}
+            id="breed"
+            value={el.id}
+            textValue={el.name}
+        />
+    ))
 
     return (
         <StyledWrapper
@@ -17,66 +25,110 @@ const SearchParams = ({ handleSubmit, handleChange, selectBreeds, queryParams })
         >
             <div>
                 <ParamsSelect
-                    gallery
                     title="ORDER"
+                    gallery
                     width="50%"
+                    initialValue="Random"
+                    handleChange={handleChange}
                     id="order"
-                    value={queryParams.order}
-                    onChange={handleChange}
                 >
-                    <option id="order" value="Random">Random</option>
-                    <option id="order" value="Desc">Desc</option>
-                    <option id="order" value="Asc">Asc</option>
+                    <DefaultSelectOption
+                        id="order"
+                        value="Random"
+                        textValue="Random"
+                    />
+                    <DefaultSelectOption
+                        id="order"
+                        value="Desc"
+                        textValue="Desc"
+                    />
+                    <DefaultSelectOption
+                        id="order"
+                        value="Asc"
+                        textValue="Asc"
+                    />
                 </ParamsSelect>
                 <ParamsSelect
+                    initialValue="Static"
+                    handleChange={handleChange}
                     gallery
                     title="TYPE"
                     width="50%"
                     id="mime_types"
-                    value={queryParams.mime_types}
-                    onChange={handleChange}
                 >
-                    <option id="mime_types" value="gif,jpg,png">All</option>
-                    <option id="mime_types" value="jpg,png">Static</option>
-                    <option id="mime_types" value="gif">Animated</option>
+                    <DefaultSelectOption
+                        id="mime_types"
+                        value="gif,jpg,png"
+                        textValue="All"
+                    />
+                    <DefaultSelectOption
+                        id="mime_types"
+                        value="jpg,png"
+                        textValue="Static"
+                    />
+                    <DefaultSelectOption
+                        id="mime_types"
+                        value="gif"
+                        textValue="Animated"
+                    />
                 </ParamsSelect>
             </div>
             <div>
                 <ParamsSelect
+                    initialValue="None"
+                    handleChange={handleChange}
                     gallery
                     title="BREED"
                     width="50%"
                     id="breed"
-                    value={queryParams.breed}
-                    onChange={handleChange}
-                    base={selectBreeds}
                 >
-                    <option
+                    <DefaultSelectOption
+                        id="breed"
                         value="0"
-                        id="0item"
+                        textValue="None"
+                    />
+                    {breedsNames}
+                    {/*  #mustupdate to saga  */}
+                </ParamsSelect>
+                <div className="form_part">
+                    <ParamsSelect
+                        gallery
+                        width="100%"
+                        initialValue={`Limit: ${queryParams.limit}`}
+                        handleChange={handleChange}
+                        id="limit"
+                        title="LIMIT"
                     >
-                        None
-                    </option>
-                    {/*  update to saga  */}
-                </ParamsSelect>
-                <ParamsSelect
-                    gallery
-                    title="LIMIT"
-                    id="limit"
-                    value={queryParams.limit}
-                    onChange={handleChange}
-                >
-                    <option id="limit" value="5">5 items per page</option>
-                    <option id="limit" value="10">10 items per page</option>
-                    <option id="limit" value="15">15 items per page</option>
-                    <option id="limit" value="20">20 items per page</option>
-                </ParamsSelect>
-                <ParamsButton
-                    white
-                    type="submit"
-                    backgroundImage={ReloadPinkSVG}
-                    bgImageHover={ReloadWhiteSVG}
-                />
+
+                        <DefaultSelectOption
+                            id="limit"
+                            textValue="Limit: 5"
+                            value="5"
+                        />
+                        <DefaultSelectOption
+                            id="limit"
+                            textValue="Limit: 10"
+                            value="10"
+                        />
+                        <DefaultSelectOption
+                            id="limit"
+                            textValue="Limit: 15"
+                            value="15"
+                        />
+                        <DefaultSelectOption
+                            id="limit"
+                            textValue="Limit: 20"
+                            value="20"
+                        />
+                    </ParamsSelect>
+                    <ParamsButton
+                        white
+                        type="submit"
+                        backgroundImage={ReloadPinkSVG}
+                        bgImageHover={ReloadWhiteSVG}
+                    />
+                </div>
+
             </div>
         </StyledWrapper>
     )

@@ -12,45 +12,63 @@ import AbtUpPinkSVG from
 import AbtDownPinkSVG from
     './../../../../../Dist/Content/RightPanel/Breeds/ContentHeadAdd/abtDownPink.svg'
 import s from './SearchParams.module.css'
+import DefaultSelect from './../../../../DefaultComponents/DefaultSelect/DefaultSelect.jsx'
+import DefaultSelectOption from '../../../../DefaultComponents/DefaultSelect/DefaultSelectOption'
 
 const SearchParams = ({ selectBreeds, queryParams, orderChange, handleChange }) => {
+
+    const breedsNames = selectBreeds.map((el) => (
+        <DefaultSelectOption
+            key={`${el.id}_key`}
+            id="breed"
+            value={el.id}
+            textValue={el.name}
+        />
+    ))
+
     return (
         <div className={s.wrapper}>
-            <ParamsSelect
+            <DefaultSelect
                 breeds
-                placeholder="All breeds"
+                initialValue="All breeds"
+                handleChange={handleChange}
                 id="breed"
-                value={queryParams.breed}
-                onChange={handleChange}
-                base={selectBreeds}
             >
-                <option
+                <DefaultSelectOption
+                    id="breed"
+                    textValue="All breeds"
                     value="0"
-                    id="0item"
-                >
-                    All breeds
-                </option>
-            </ParamsSelect>
-            <ParamsSelect
-                width="25%"
+                />
+                {breedsNames}
+            </DefaultSelect>
+            <DefaultSelect
                 breeds
+                width="25%"
+                initialValue={`Limit: ${queryParams.limit}`}
+                handleChange={handleChange}
                 id="limit"
-                value={queryParams.limit}
-                onChange={handleChange}
             >
-                <option value="5">
-                    5
-                </option>
-                <option value="10">
-                    10
-                </option>
-                <option value="15">
-                    15
-                </option>
-                <option value="20">
-                    20
-                </option>
-            </ParamsSelect>
+                <DefaultSelectOption
+                    id="limit"
+                    textValue="Limit: 5"
+                    value="5"
+                />
+                <DefaultSelectOption
+                    id="limit"
+                    textValue="Limit: 10"
+                    value="10"
+                />
+                <DefaultSelectOption
+                    id="limit"
+                    textValue="Limit: 15"
+                    value="15"
+                />
+                <DefaultSelectOption
+                    id="limit"
+                    textValue="Limit: 20"
+                    value="20"
+                />
+            </DefaultSelect>
             <ParamsButton
                 alphabet
                 backgroundImage={AbtUpGraySVG}

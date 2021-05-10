@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useDogState } from './Functions/useDogState.js'
 import { voteEvent } from './Functions/voteEvent.js'
@@ -6,22 +6,26 @@ import { api } from './../../../../Services/Api.js'
 import ContentHead from './../ContentHead/ContentHead.jsx'
 import LawCourt from './LawCourt/LawCourt.jsx'
 import ActionLogs from './ActionLogs/ActionLogs.jsx'
+import withPreloader from '../../../HOC/withPreloader'
 
-const Voting = () => {
+const Voting = (props) => {
+    const { setLoading } = props
     const dispatch = useDispatch()
-
     const [suspect, getRandomDog,
-        isFav, favClick,
-        componentMounted] = useDogState()
+        isFav, favClick] = useDogState()
 
     const withGetRandomDog = (fn) => (e) => {
         fn(e)
         getRandomDog()
     }
 
-    if (!componentMounted) {
-        return <></>
-    }
+    useEffect(() => {
+        const apiReq = async () => {
+            await getRandomDog()
+            setLoading(false)
+        }
+        apiReq()
+    }, [])
 
     return (
         <>
@@ -38,4 +42,4 @@ const Voting = () => {
     )
 }
 
-export default Voting
+export default withPreloader(Voting)

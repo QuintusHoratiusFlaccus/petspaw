@@ -19,7 +19,7 @@
 }
 
 .nawLink:hover button {
-  background-color: rgba(251,224,220, 0.5);
+  background-color: #FBE0DC;
   transition: 0.1s linear;
 }
 

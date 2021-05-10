@@ -1,15 +1,13 @@
 import SearchParams from './ContentHeadAdd/SearchParams.jsx'
 import { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import { api } from '../../../../Services/Api'
 import { createGalleryList } from '../../../../Functions/Content/RightPanel/createGallaryList'
 import { createStructuredArr } from '../../../../Functions/Content/RightPanel/createStructuredArr'
 import BreedCard from '../CardTypes/WithBreed/BreedCard'
+import withPreloader from '../../../HOC/withPreloader'
 
-const Breeds = () => {
-    //code used twice, #mustupdate
-    //believable issue may be somes like factory
-    const history = useHistory()
+const Breeds = ({ setLoading }) => {
+    //#mustupdate
     const [queryParams, setQueryParams] = useState({
         breed: 0,
         limit: 10,
@@ -21,13 +19,13 @@ const Breeds = () => {
     const handleChange = (e) => {
         setQueryParams({
             ...queryParams,
-            [e.target.id]: e.target.value
+            [e.target.id]: e.target.attributes.value.value
         })
     }
 
     useEffect(() => {
         //Wheel. Have no time. #mustupdate
-        if (queryParams.breed === 0) {
+        if (queryParams.breed == 0) {
             const arrFilter = (data) => {
                 const onlyNames = data.map((el) => ({
                     name: el.name,
@@ -40,8 +38,8 @@ const Breeds = () => {
                 const resp = await api.breeds.getBreeds()
                 setBreedsData(resp.data.slice(0, (queryParams.limit)))
                 setState(resp.data)
+                setLoading(false)
             }
-
             apiReq(arrFilter)
         } else {
             const data = {
@@ -51,6 +49,7 @@ const Breeds = () => {
             const apiReq = async (data) => {
                 const resp = await api.images.getDogsByParams(data)
                 setBreedsData(createStructuredArr(resp.data))
+                setLoading(false)
             }
 
             apiReq(data)
@@ -63,7 +62,8 @@ const Breeds = () => {
         }
     }, [queryParams.order])
 
-    //allbreeds request have no "order" property
+    //getBreeds request have no "order" property. #mustupdate.
+    //upload arr of breeds once at app starting and push this into redux
     const orderChange = (e) => {
         if (e.target.value !== queryParams.order) {
             handleChange(e)
@@ -85,4 +85,4 @@ const Breeds = () => {
     )
 }
 
-export default Breeds
+export default withPreloader(Breeds)

@@ -5,7 +5,7 @@ const BreedCard = (props) => {
     const history = useHistory()
 
     const handleClick = () => {
-        history.push(`/breeds/selected?id=${props.value}`)
+        history.push(`/breeds/selected?id=${props.id}`)
     }
 
     return (
@@ -13,9 +13,13 @@ const BreedCard = (props) => {
             {...props}
             onClick={handleClick}
         >
-            <div className="hoverContent_action">
-                {props.text}
-            </div>
+            {
+                props.text ? (
+                    <div className="hoverContent_action">
+                        {props.text}
+                    </div>
+                ) : null
+            }
         </StyledCard>
     )
 }

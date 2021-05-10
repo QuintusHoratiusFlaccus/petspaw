@@ -29,7 +29,7 @@ export const StyledButton = styled.button`
   
   ${props => props.white && css`
     background-color: ${({ theme }) => theme.selectColor}};
-    margin: 0px 10px 0 0;
+    margin: 0px 10px 2px 0;
   `}
   
   ${props => props.alphabet && css`

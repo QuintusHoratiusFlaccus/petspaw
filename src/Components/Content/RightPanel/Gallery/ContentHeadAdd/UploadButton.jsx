@@ -15,7 +15,7 @@ const ContentHeadAdd = ({ onClick }) => {
             bgImageHover={UploadWhiteSVG}
             onClick={onClick}
         >
-      UPLOAD
+            UPLOAD
         </UploadButton>
     )
 }
