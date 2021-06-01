@@ -15,6 +15,7 @@ export const StyledButton = styled.button`
   background-position: center center;
   background-repeat: no-repeat;
   transition: 0.1s;
+  flex-shrink: 0;
 
   :hover {
     color: #FFF;

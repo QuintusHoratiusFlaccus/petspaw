@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const StyledModalWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   display: flex;
   width: 100vw;
   height: 100vh;
   justify-content: flex-end;
   background: rgba(29, 29, 29, 0.6);
   z-index: 1;
-  
+
   .modal_indicator {
     font-size: 20px;
     line-height: 30px;
@@ -19,6 +19,7 @@ export const StyledModalWrapper = styled.div`
   }
   
   .modal_window {
+    position: sticky;
     display: flex;
     flex-direction: column;
     align-items: center;
