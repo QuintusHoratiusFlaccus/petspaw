@@ -1,16 +1,18 @@
 import { api } from '../../../Services/Api'
 import { put, call } from 'redux-saga/effects'
-import { fetchFavourites } from '../../Constants/Sagas/Constants'
+// import { fetchFavourites } from '../../Constants/Sagas/Constants'
+import { favouritesActions } from '../../Actions/getAllFavourites'
 
 function* addFavourites () {
     try {
-        yield put({ type: fetchFavourites.REQUEST })
+        //change constants into actions
+        yield put(favouritesActions.REQUEST())
         const resp = yield call(api.favourites.getFavourites)
-        yield put({ type: fetchFavourites.SUCCESS, payload: resp.data })
+        yield put(favouritesActions.SUCCESS(resp.data))
     } catch (error) {
-        yield put({ type: fetchFavourites.ERROR, payload: error })
+        yield put(favouritesActions.ERROR(error))
     } finally {
-        yield put({ type: fetchFavourites.FULFILL })
+        yield put(favouritesActions.FULFILL())
     }
 }
 

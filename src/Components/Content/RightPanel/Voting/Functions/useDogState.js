@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { api } from '../../../../../Services/Api'
 import { voteActions } from '../../../../../Redux/Actions/voteActions'
 import { useDispatch, useSelector } from 'react-redux'

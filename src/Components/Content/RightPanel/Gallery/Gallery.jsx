@@ -21,7 +21,6 @@ const Gallery = ({ setLoading }) => {
     const [selectBreeds, setSelectBreeds] = useState([])
 
     const handleChange = (e) => {
-
         setQueryParams({
             ...queryParams,
             [e.target.id]: e.target.attributes.value.value

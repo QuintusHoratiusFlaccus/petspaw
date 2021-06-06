@@ -14,7 +14,6 @@ import {
 } from './Components/Content/RightPanel/main'
 import LeftPanel from './Components/Content/LeftPanel/LeftPanel.jsx'
 import Home from './Components/Content/RightPanel/Home/Home.jsx'
-import Selected from './Components/Content/RightPanel/Selected/Selected.jsx'
 import Modal from './Components/Content/RightPanel/Modal/Modal'
 
 import { StyledApp } from './StyledApp.js'
